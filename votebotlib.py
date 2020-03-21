@@ -138,9 +138,23 @@ class Vote():
 class VoteBotLogger():
     def __init__(self):
         # Create new log file here
-        now_str = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
-        self.log_file = open("logs/" + now_str + ".log", "a")
+        self.name_str = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
+        self.log_file = open("logs/" + self.name_str + ".log", "a")
         self.log("INFO", "Starting logger")
+
+    def save_results(self, session):
+        file = open("results/" + self.name_str + ".txt", "w")
+        file.write("---------------------------------------------------------\n\n")
+        for question in session.questions:
+            stats = session.vote_stats(question)
+            file.write("[#" + str(question.id) + "] " + question.text + "\n")
+            file.write("    " + str(stats[4]) + " votes | " + str(stats[5]) + " % participation\n")
+            file.write("        In favour: " + str(stats[0]) + "\n")
+            file.write("        Opposed: " + str(stats[1]) + "\n")
+            file.write("        Abstained: " + str(stats[2]) + "\n")
+            file.write("        Did not vote: " + str(stats[3]) + "\n\n")
+            file.write("---------------------------------------------------------\n\n")
+        file.close()
 
     def log(self, type, message):
         now_str = datetime.now().strftime("%d-%m-%Y %H:%M:%S")

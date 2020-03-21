@@ -1,9 +1,0 @@
-[21-03-2020 14:15:55] [INFO] Starting logger
-[21-03-2020 14:16:20] [WARNING] VOTER login failed using access code "democrac"
-[21-03-2020 14:16:23] [INFO] Adam Furfaro has verified their VOTER identity using access code "right?"
-[21-03-2020 14:16:29] [WARNING] VOTER login failed using access code "democracy"
-[21-03-2020 14:16:32] [WARNING] VOTER login failed using access code "democracy"
-[21-03-2020 14:16:34] [WARNING] VOTER login failed using access code ""
-[21-03-2020 14:16:38] [WARNING] VOTER login failed using access code "democracy"
-[21-03-2020 14:16:46] [WARNING] VOTER login failed using access code "democracy"
-[21-03-2020 14:17:03] [INFO] Closing logger

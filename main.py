@@ -190,7 +190,6 @@ async def run(socket, path):
             session.connected_admins.remove(admin)
             logger.log("INFO", "ADMIN " + admin.name + " disconnected")
 
-
 logger = VoteBotLogger()
 
 admin = Admin("Joe", "Furfaro", "secret123")
@@ -214,4 +213,5 @@ try:
     asyncio.get_event_loop().run_until_complete(start_server)
     asyncio.get_event_loop().run_forever()
 except KeyboardInterrupt:
+    logger.save_results(session)
     logger.close()

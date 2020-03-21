@@ -1,5 +1,0 @@
-[20-03-2020 22:45:26] [INFO] Starting logger
-[20-03-2020 22:45:33] [INFO] Joe Furfaro has verified their VOTER identity using access code "democracy"
-[20-03-2020 22:46:07] [WARNING] VOTER duplicate login blocked using access code "democracy"
-[20-03-2020 22:46:12] [INFO] VOTER Joe Furfaro disconnected
-[20-03-2020 22:49:28] [INFO] Closing logger

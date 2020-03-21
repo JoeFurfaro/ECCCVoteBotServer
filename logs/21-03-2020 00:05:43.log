@@ -1,8 +1,0 @@
-[21-03-2020 00:05:43] [INFO] Starting logger
-[21-03-2020 00:06:06] [INFO] Joe Furfaro has verified their VOTER identity using access code "democracy"
-[21-03-2020 00:06:22] [INFO] Joe Furfaro has verified their ADMIN identity using access code "secret123"
-[21-03-2020 00:06:24] [INFO] Joe Furfaro has changed the question ID to 1
-[21-03-2020 00:06:38] [INFO] Joe Furfaro has voted "IN_FAVOUR"
-[21-03-2020 00:06:47] [INFO] Joe Furfaro has cleared the current question
-[21-03-2020 00:06:58] [INFO] Joe Furfaro has changed the question ID to 1
-[21-03-2020 00:07:11] [INFO] Closing logger

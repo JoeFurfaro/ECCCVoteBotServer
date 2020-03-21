@@ -1,8 +1,0 @@
-[20-03-2020 15:28:09] [INFO] Starting logger
-[20-03-2020 15:28:25] [INFO] Joe Furfaro has verified their ADMIN identity using access code "secret123"
-[20-03-2020 15:28:28] [INFO] Joe Furfaro has changed the question ID to 1
-[20-03-2020 15:28:53] [INFO] Joe Furfaro has verified their VOTER identity using access code "democracy"
-[20-03-2020 15:28:56] [INFO] Joe Furfaro has voted "ABSTAIN"
-[20-03-2020 15:30:06] [INFO] VOTER Joe Furfaro disconnected
-[20-03-2020 15:30:10] [INFO] Joe Furfaro has verified their VOTER identity using access code "democracy"
-[20-03-2020 15:33:41] [INFO] Closing logger
