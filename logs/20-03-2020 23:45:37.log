@@ -1,0 +1,28 @@
+[20-03-2020 23:45:37] [INFO] Starting logger
+[20-03-2020 23:45:52] [INFO] Joe Furfaro has verified their VOTER identity using access code "democracy"
+[20-03-2020 23:46:24] [INFO] Joe Furfaro has verified their ADMIN identity using access code "secret123"
+[20-03-2020 23:46:26] [INFO] Joe Furfaro has changed the question ID to 1
+[20-03-2020 23:46:30] [INFO] Joe Furfaro has voted "IN_FAVOUR"
+[20-03-2020 23:46:52] [INFO] VOTER Joe Furfaro disconnected
+[20-03-2020 23:46:55] [INFO] Joe Furfaro has verified their VOTER identity using access code "democracy"
+[20-03-2020 23:50:05] [INFO] VOTER Joe Furfaro disconnected
+[20-03-2020 23:50:12] [INFO] Joe Furfaro has verified their VOTER identity using access code "democracy"
+[20-03-2020 23:51:32] [INFO] VOTER Joe Furfaro disconnected
+[20-03-2020 23:51:36] [INFO] Joe Furfaro has verified their VOTER identity using access code "democracy"
+[20-03-2020 23:51:44] [INFO] VOTER Joe Furfaro disconnected
+[20-03-2020 23:51:47] [INFO] Joe Furfaro has verified their VOTER identity using access code "democracy"
+[20-03-2020 23:52:02] [INFO] VOTER Joe Furfaro disconnected
+[20-03-2020 23:52:41] [INFO] Joe Furfaro has verified their VOTER identity using access code "democracy"
+[20-03-2020 23:53:01] [INFO] Joe Furfaro has cleared the current question
+[20-03-2020 23:53:52] [INFO] Joe Furfaro has reset the votes on question 1
+[20-03-2020 23:54:02] [INFO] Joe Furfaro has changed the question ID to 1
+[20-03-2020 23:54:34] [INFO] Joe Furfaro has voted "ABSTAIN"
+[20-03-2020 23:55:18] [INFO] VOTER Joe Furfaro disconnected
+[20-03-2020 23:55:21] [INFO] Joe Furfaro has verified their VOTER identity using access code "democracy"
+[20-03-2020 23:55:24] [INFO] Joe Furfaro has cleared the current question
+[20-03-2020 23:55:45] [INFO] VOTER Joe Furfaro disconnected
+[20-03-2020 23:55:49] [INFO] Joe Furfaro has verified their VOTER identity using access code "democracy"
+[20-03-2020 23:55:55] [INFO] Joe Furfaro has changed the question ID to 1
+[20-03-2020 23:56:05] [INFO] Joe Furfaro has cleared the current question
+[20-03-2020 23:56:55] [INFO] VOTER Joe Furfaro disconnected
+[21-03-2020 00:01:02] [INFO] Closing logger

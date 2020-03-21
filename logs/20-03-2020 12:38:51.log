@@ -1,0 +1,6 @@
+[20-03-2020 12:38:51] [INFO] Starting logger
+[20-03-2020 12:39:13] [WARNING] VOTER login failed using access code "gdfg"
+[20-03-2020 12:39:20] [INFO] Joe Furfaro has verified their VOTER identity using access code "democracy"
+[20-03-2020 12:41:11] [INFO] Joe Furfaro has verified their ADMIN identity using access code "secret123"
+[20-03-2020 12:41:24] [INFO] Joe Furfaro has changed the question ID to 1
+[20-03-2020 12:42:14] [INFO] Closing logger

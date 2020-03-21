@@ -1,0 +1,22 @@
+[20-03-2020 22:50:16] [INFO] Starting logger
+[20-03-2020 22:53:26] [WARNING] VOTER login failed using access code "ping"
+[20-03-2020 22:54:23] [INFO] Joe Furfaro has verified their VOTER identity using access code "democracy"
+[20-03-2020 22:54:35] [WARNING] VOTER duplicate login blocked using access code "democracy"
+[20-03-2020 22:55:39] [WARNING] VOTER duplicate login blocked using access code "democracy"
+[20-03-2020 22:56:32] [WARNING] VOTER duplicate login blocked using access code "democracy"
+[20-03-2020 22:56:42] [INFO] VOTER Joe Furfaro disconnected
+[20-03-2020 22:56:46] [WARNING] VOTER login failed using access code ""
+[20-03-2020 22:56:49] [INFO] Joe Furfaro has verified their VOTER identity using access code "democracy"
+[20-03-2020 22:56:56] [WARNING] VOTER duplicate login blocked using access code "democracy"
+[20-03-2020 22:57:28] [WARNING] VOTER duplicate login blocked using access code "democracy"
+[20-03-2020 22:57:28] [INFO] VOTER Joe Furfaro disconnected
+[20-03-2020 22:59:55] [INFO] Joe Furfaro has verified their VOTER identity using access code "democracy"
+[20-03-2020 23:00:00] [WARNING] VOTER duplicate login blocked using access code "democracy"
+[20-03-2020 23:00:07] [INFO] VOTER Joe Furfaro disconnected
+[20-03-2020 23:00:20] [INFO] Joe Furfaro has verified their VOTER identity using access code "democracy"
+[20-03-2020 23:00:50] [INFO] VOTER Joe Furfaro disconnected
+[20-03-2020 23:02:26] [INFO] Joe Furfaro has verified their VOTER identity using access code "democracy"
+[20-03-2020 23:03:56] [INFO] VOTER Joe Furfaro disconnected
+[20-03-2020 23:04:24] [INFO] Joe Furfaro has verified their VOTER identity using access code "democracy"
+[20-03-2020 23:06:09] [INFO] VOTER Joe Furfaro disconnected
+[20-03-2020 23:09:43] [INFO] Closing logger

@@ -1,0 +1,22 @@
+[20-03-2020 23:14:32] [INFO] Starting logger
+[20-03-2020 23:14:38] [INFO] Joe Furfaro has verified their VOTER identity using access code "democracy"
+[20-03-2020 23:14:45] [INFO] VOTER Joe Furfaro disconnected
+[20-03-2020 23:16:38] [INFO] Joe Furfaro has verified their VOTER identity using access code "democracy"
+[20-03-2020 23:19:18] [INFO] VOTER Joe Furfaro disconnected
+[20-03-2020 23:20:24] [INFO] Joe Furfaro has verified their VOTER identity using access code "democracy"
+[20-03-2020 23:21:45] [INFO] Joe Furfaro has verified their ADMIN identity using access code "secret123"
+[20-03-2020 23:22:07] [INFO] Joe Furfaro has changed the question ID to 1
+[20-03-2020 23:22:42] [INFO] VOTER Joe Furfaro disconnected
+[20-03-2020 23:22:49] [INFO] Joe Furfaro has verified their VOTER identity using access code "democracy"
+[20-03-2020 23:23:36] [INFO] VOTER Joe Furfaro disconnected
+[20-03-2020 23:23:50] [INFO] Joe Furfaro has verified their VOTER identity using access code "democracy"
+[20-03-2020 23:24:15] [INFO] VOTER Joe Furfaro disconnected
+[20-03-2020 23:24:19] [INFO] Joe Furfaro has verified their VOTER identity using access code "democracy"
+[20-03-2020 23:24:40] [INFO] VOTER Joe Furfaro disconnected
+[20-03-2020 23:24:44] [INFO] Joe Furfaro has verified their VOTER identity using access code "democracy"
+[20-03-2020 23:25:02] [INFO] VOTER Joe Furfaro disconnected
+[20-03-2020 23:25:05] [INFO] Joe Furfaro has verified their VOTER identity using access code "democracy"
+[20-03-2020 23:25:13] [INFO] VOTER Joe Furfaro disconnected
+[20-03-2020 23:25:22] [INFO] Joe Furfaro has verified their VOTER identity using access code "democracy"
+[20-03-2020 23:25:34] [INFO] VOTER Joe Furfaro disconnected
+[20-03-2020 23:27:04] [INFO] Closing logger

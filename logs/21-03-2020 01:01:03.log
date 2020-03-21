@@ -1,0 +1,7 @@
+[21-03-2020 01:01:03] [INFO] Starting logger
+[21-03-2020 01:01:25] [INFO] Joe Furfaro has verified their ADMIN identity using access code "secret123"
+[21-03-2020 01:01:34] [INFO] ADMIN Joe Furfaro disconnected
+[21-03-2020 01:01:36] [WARNING] ADMIN login failed using access code "123"
+[21-03-2020 01:14:43] [WARNING] ADMIN login failed using access code "poop"
+[21-03-2020 01:16:22] [INFO] Joe Furfaro has verified their ADMIN identity using access code "secret123"
+[21-03-2020 01:17:50] [INFO] Closing logger

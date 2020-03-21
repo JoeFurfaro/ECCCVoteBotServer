@@ -1,0 +1,8 @@
+[20-03-2020 22:24:35] [INFO] Starting logger
+[20-03-2020 22:31:56] [WARNING] VOTER login failed using access code "thing"
+[20-03-2020 22:32:45] [INFO] Joe Furfaro has verified their VOTER identity using access code "democracy"
+[20-03-2020 22:34:32] [INFO] VOTER Joe Furfaro disconnected
+[20-03-2020 22:34:41] [INFO] Joe Furfaro has verified their VOTER identity using access code "democracy"
+[20-03-2020 22:35:13] [WARNING] VOTER login failed using access code "acc"
+[20-03-2020 22:35:46] [INFO] Joe Furfaro has verified their VOTER identity using access code "democracy"
+[20-03-2020 22:36:31] [INFO] Closing logger

@@ -1,0 +1,10 @@
+[20-03-2020 14:48:37] [INFO] Starting logger
+[20-03-2020 14:50:18] [WARNING] ADMIN login failed using access code "poop"
+[20-03-2020 14:50:29] [INFO] Joe Furfaro has verified their ADMIN identity using access code "secret123"
+[20-03-2020 14:51:42] [INFO] Joe Furfaro has changed the question ID to 1
+[20-03-2020 14:52:27] [WARNING] VOTER login failed using access code "eth"
+[20-03-2020 14:52:42] [INFO] Joe Furfaro has verified their VOTER identity using access code "democracy"
+[20-03-2020 14:53:44] [INFO] Joe Furfaro has cleared the current question
+[20-03-2020 14:55:20] [INFO] Joe Furfaro has changed the question ID to 1
+[20-03-2020 14:55:26] [INFO] Joe Furfaro has voted "ABSTAIN"
+[20-03-2020 14:56:22] [INFO] Closing logger
