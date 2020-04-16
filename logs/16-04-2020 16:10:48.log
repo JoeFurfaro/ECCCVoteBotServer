@@ -1,0 +1,7 @@
+[16-04-2020 16:10:48] [INFO] Starting logger
+[16-04-2020 16:11:04] [INFO] Joe Furfaro has verified their ADMIN identity using access code "Dipole2001!"
+[16-04-2020 16:11:06] [INFO] ADMIN Joe Furfaro disconnected
+[16-04-2020 16:11:28] [INFO] Admin 2 has verified their ADMIN identity using access code "password"
+[16-04-2020 16:11:31] [INFO] ADMIN Admin 2 disconnected
+[16-04-2020 16:11:35] [WARNING] ADMIN login failed using access code "xx"
+[16-04-2020 16:11:42] [INFO] Closing logger

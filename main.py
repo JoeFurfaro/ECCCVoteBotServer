@@ -193,7 +193,15 @@ async def run(socket, path):
 
 logger = VoteBotLogger()
 
-admin = Admin("Joe", "Furfaro", "secret123")
+admins = []
+with open("admin_data.csv") as csv_file:
+    csv_reader = csv.reader(csv_file, delimiter=',')
+    for row in csv_reader:
+        admins.append(row)
+
+admin_objs = []
+for admin in admins:
+    admin_objs.append(Admin(admin[0], admin[1], admin[2]))
 
 voters = []
 with open("voter_data.csv") as csv_file:
@@ -215,7 +223,7 @@ question_objs = []
 for question in questions[1:]:
     question_objs.append(Question(int(question[0]), question[1]))
 
-session = VotingSession([admin], voter_objs, question_objs)
+session = VotingSession(admin_objs, voter_objs, question_objs)
 
 try:
     print("Starting ECCCVoteBotServer...")
