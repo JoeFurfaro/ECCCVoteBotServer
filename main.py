@@ -3,6 +3,7 @@
 import asyncio
 import websockets
 from votebotlib import *
+import csv
 
 async def run(socket, path):
     global session, logger
@@ -194,16 +195,27 @@ logger = VoteBotLogger()
 
 admin = Admin("Joe", "Furfaro", "secret123")
 
-voter = Voter("Joe", "Furfaro", "joe@dipole.app", "democracy")
-voter2 = Voter("Adam", "Furfaro", "adamfurfaro@gmail.com", "right?")
-voter3 = Voter("Paula", "Furfaro", "peabee2@gmail.com", "tuna")
-voter4 = Voter("Lilli", "Furfaro", "lillifurfaro@gmail.com", "lilli")
-voter5 = Voter("Glenn", "Peterson", "glenn@covchurch.ca", "jonas")
+voters = []
+with open("voter_data.csv") as csv_file:
+    csv_reader = csv.reader(csv_file, delimiter=',')
+    for row in csv_reader:
+        voters.append(row)
 
-question_1 = Question(1, "What is your favourite colour?")
-question_2 = Question(2, "Peanut butter jelly time")
+voter_objs = []
+for voter in voters:
+    voter_objs.append(Voter(voter[0], voter[1], voter[2], voter[3]))
 
-session = VotingSession([admin], [voter, voter2, voter3, voter4, voter5], [question_1, question_2])
+questions = []
+with open("questions.csv") as csv_file:
+    csv_reader = csv.reader(csv_file, delimiter=',')
+    for row in csv_reader:
+        questions.append(row)
+
+question_objs = []
+for question in questions[1:]:
+    question_objs.append(Question(int(question[0]), question[1]))
+
+session = VotingSession([admin], voter_objs, question_objs)
 
 try:
     print("Starting ECCCVoteBotServer...")

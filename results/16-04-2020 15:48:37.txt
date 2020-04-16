@@ -1,0 +1,29 @@
+---------------------------------------------------------
+
+[#1] I will do a test question
+    2 votes | 50.0 % participation
+        In favour: 0
+        Opposed: 1
+        Abstained: 1
+        Did not vote: 2
+
+---------------------------------------------------------
+
+[#2] I will do another test question
+    2 votes | 50.0 % participation
+        In favour: 1
+        Opposed: 0
+        Abstained: 1
+        Did not vote: 2
+
+---------------------------------------------------------
+
+[#3] So many cool test questions to do
+    0 votes | 0.0 % participation
+        In favour: 0
+        Opposed: 0
+        Abstained: 0
+        Did not vote: 4
+
+---------------------------------------------------------
+
