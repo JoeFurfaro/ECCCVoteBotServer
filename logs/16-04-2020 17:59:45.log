@@ -1,0 +1,14 @@
+[16-04-2020 17:59:45] [INFO] Starting logger
+[16-04-2020 17:59:52] [INFO] Lilli Furfaro has verified their VOTER identity using access code "c7egqvmx"
+[16-04-2020 17:59:58] [INFO] Paula Furfaro has verified their VOTER identity using access code "lqzzl6nh"
+[16-04-2020 18:00:07] [INFO] Joe Furfaro has verified their ADMIN identity using access code "Dipole2001!"
+[16-04-2020 18:00:15] [INFO] Joe Furfaro has verified their VOTER identity using access code "3eyzd75t"
+[16-04-2020 18:00:18] [INFO] Joe Furfaro has changed the question ID to 1
+[16-04-2020 18:00:22] [INFO] Joe Furfaro has voted "True"
+[16-04-2020 18:00:24] [INFO] Lilli Furfaro has voted "True"
+[16-04-2020 18:00:25] [INFO] Paula Furfaro has voted "True"
+[16-04-2020 18:00:31] [INFO] Joe Furfaro has changed the question ID to 2
+[16-04-2020 18:00:33] [INFO] Joe Furfaro has voted "Robert"
+[16-04-2020 18:00:33] [INFO] Lilli Furfaro has voted "Ted"
+[16-04-2020 18:00:35] [INFO] Paula Furfaro has voted "Ted"
+[16-04-2020 18:00:44] [INFO] Closing logger

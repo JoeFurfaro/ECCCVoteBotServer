@@ -19,7 +19,6 @@ async def run(socket, path):
     # -> 705: Invalid VOTER question ID
     # -> 706: Current question is NONE
     # -> 707: Voter has already voted on question
-    # -> 708: Receieved an unexpected VOTE value
     # -> 709: User is already logged in
     # -> 800: Voter login success
     # -> 801: Vote registered successfully
@@ -51,7 +50,7 @@ async def run(socket, path):
         if session.cur_question == None:
             await socket.send("NEW|||NONE|||NONE")
         else:
-            await socket.send("NEW|||" + str(session.cur_question.id) + "|||" + session.cur_question.text + "|||" + str(session.has_already_voted(voter)))
+            await socket.send("NEW|||" + str(session.cur_question) + "|||" + str(session.has_already_voted(voter)))
         await session.send_to_admins("ONLINE|||" + str(len(session.connected_voters)))
 
         try:
@@ -70,16 +69,13 @@ async def run(socket, path):
                                 if session.get_question(question_id) != None:
                                     if session.cur_question != None:
                                         if not session.has_already_voted(voter):
-                                            # Validate VOTE value
-                                            if value in ("IN_FAVOUR", "OPPOSED", "ABSTAIN"):
-                                                # Process vote
-                                                session.cur_question.votes.append(Vote(voter, value))
-                                                await socket.send("801")
-                                                stats = session.vote_stats(session.cur_question)
-                                                await session.send_to_admins("STATS|||" + str(session.cur_question.id) + "|||" + str(stats[0]) + "|||" + str(stats[1]) + "|||" + str(stats[2]) + "|||" + str(stats[3]) + "|||" + str(stats[4]) + "|||" + str(stats[5]))
-                                                logger.log("INFO", voter.name + " has voted \"" + value + "\"")
-                                            else:
-                                                await socket.send("708")
+                                            # Process vote
+                                            session.cur_question.votes.append(Vote(voter, value))
+                                            await socket.send("801")
+                                            stats = session.vote_stats(session.cur_question)
+                                            stats_str = session.vote_stats_str(session.cur_question)
+                                            await session.send_to_admins("STATS|||" + str(session.cur_question) + "|||" + stats_str)
+                                            logger.log("INFO", voter.name + " has voted \"" + value + "\"")
                                         else:
                                             await socket.send("707")
                                     else:
@@ -135,11 +131,12 @@ async def run(socket, path):
         if session.cur_question == None:
             await socket.send("NEW|||NONE|||NONE")
         else:
-            await socket.send("NEW|||" + str(session.cur_question.id) + "|||" + session.cur_question.text)
+            await socket.send("NEW|||" + str(session.cur_question))
 
         for question in session.questions:
             stats = session.vote_stats(question)
-            await socket.send("REG|||" + str(question.id) + "|||" + str(question.text) + "|||" + str(stats[0]) + "|||" + str(stats[1]) + "|||" + str(stats[2]) + "|||" + str(stats[3]) + "|||" + str(stats[4]) + "|||" + str(stats[5]))
+            stats_str = session.vote_stats_str(question)
+            await socket.send("REG|||" + str(question) + "|||" + stats_str)
         await socket.send("ONLINE|||" + str(len(session.connected_voters)))
 
         try:
@@ -158,8 +155,8 @@ async def run(socket, path):
                                 assert(session.set_current_question(new_question_id))
                                 question = session.get_question(new_question_id)
                                 for voter in session.connected_voters:
-                                    await voter.websocket.send("NEW|||" + str(new_question_id) + "|||" + question.text + "|||" + str(session.has_already_voted(voter)))
-                                await session.send_to_admins("NEW|||" + str(new_question_id) + "|||" + question.text)
+                                    await voter.websocket.send("NEW|||" + str(question) + "|||" + str(session.has_already_voted(voter)))
+                                await session.send_to_admins("NEW|||" + str(question))
                                 await socket.send("802")
                                 logger.log("INFO", admin.name + " has changed the question ID to " + str(new_question_id))
                             except:
@@ -177,7 +174,8 @@ async def run(socket, path):
                                 await socket.send("804")
                                 question = session.get_question(question_id)
                                 stats = session.vote_stats(question)
-                                await session.send_to_admins("STATS|||" + str(question_id) + "|||" + str(stats[0]) + "|||" + str(stats[1]) + "|||" + str(stats[2]) + "|||" + str(stats[3]) + "|||" + str(stats[4]) + "|||" + str(stats[5]))
+                                stats_str = session.vote_stats_str(question)
+                                await session.send_to_admins("STATS|||" + str(question) + "|||" + stats_str)
                                 logger.log("INFO", admin.name + " has reset the votes on question " + str(question_id))
                             else:
                                 await socket.send("704")
@@ -221,7 +219,7 @@ with open("questions.csv") as csv_file:
 
 question_objs = []
 for question in questions[1:]:
-    question_objs.append(Question(int(question[0]), question[1]))
+    question_objs.append(Question(int(question[0]), question[1], question[2:]))
 
 session = VotingSession(admin_objs, voter_objs, question_objs)
 

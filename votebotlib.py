@@ -32,9 +32,18 @@ class VotingSession():
     def vote_stats(self, question):
         did_not_vote = len(self.voters) - len(question.votes)
         stats = question.vote_stats()
-        total_voters = sum(stats)
+        total_voters = sum(list(stats.values()))
         perc_voted = round(100 * total_voters / len(self.voters), 1)
-        return stats + [did_not_vote, total_voters, perc_voted]
+        return list(stats.values()) + [did_not_vote, total_voters, perc_voted]
+
+    def vote_stats_str(self, question):
+        stats = self.vote_stats(question)
+        stat_str = ""
+        for i,stat in enumerate(stats):
+            stat_str += str(stat)
+            if i < len(stats) - 1:
+                stat_str += "%%"
+        return stat_str
 
     async def send_to_voters(self, data):
         for voter in self.connected_voters:
@@ -112,23 +121,28 @@ class VotingSession():
         return False
 
 class Question():
-    def __init__(self, id, text):
+    def __init__(self, id, text, options):
         self.id = id
         self.text = text
         self.votes = []
+        self.options = options
 
     def vote_stats(self):
-        in_favour = 0
-        opposed = 0
-        abstain = 0
+        results = {}
+        for option in self.options:
+            results[option] = 0
         for vote in self.votes:
-            if vote.value == "IN_FAVOUR":
-                in_favour += 1
-            elif vote.value == "OPPOSED":
-                opposed += 1
-            elif vote.value == "ABSTAIN":
-                abstain += 1
-        return [in_favour, opposed, abstain]
+            if vote.value in self.options:
+                results[vote.value] += 1
+        return results
+
+    def __str__(self):
+        text = str(self.id) + "%%" + self.text + "%%"
+        for i,option in enumerate(self.options):
+            text += option
+            if i < len(self.options) - 1:
+                text += "%%"
+        return text
 
 class Vote():
     def __init__(self, voter, value):
@@ -144,15 +158,12 @@ class VoteBotLogger():
 
     def save_results(self, session):
         file = open("results/" + self.name_str + ".txt", "w")
-        file.write("---------------------------------------------------------\n\n")
+        file.write("---------------------------------------------------------\n")
         for question in session.questions:
             stats = session.vote_stats(question)
             file.write("[#" + str(question.id) + "] " + question.text + "\n")
-            file.write("    " + str(stats[4]) + " votes | " + str(stats[5]) + " % participation\n")
-            file.write("        In favour: " + str(stats[0]) + "\n")
-            file.write("        Opposed: " + str(stats[1]) + "\n")
-            file.write("        Abstained: " + str(stats[2]) + "\n")
-            file.write("        Did not vote: " + str(stats[3]) + "\n\n")
+            for i,option in enumerate(question.options):
+                file.write("        " + option + ": " + str(stats[i]) + "\n")
             file.write("---------------------------------------------------------\n\n")
         file.close()
 

@@ -1,29 +1,27 @@
 ---------------------------------------------------------
 
-[#1] I will do a test question
-    1 votes | 25.0 % participation
-        In favour: 1
-        Opposed: 0
-        Abstained: 0
-        Did not vote: 3
-
+[#1] What is 4+4?
+    3 votes | 1 % participation
+        64: 0
+        77: 1
+        105: 0
+        Abstain: 0
 ---------------------------------------------------------
 
 [#2] I will do another test question
     1 votes | 25.0 % participation
-        In favour: 1
+        In Favour: 0
         Opposed: 0
-        Abstained: 0
-        Did not vote: 3
-
+        Abstain: 1
 ---------------------------------------------------------
 
 [#3] So many cool test questions to do
-    1 votes | 25.0 % participation
-        In favour: 0
-        Opposed: 0
-        Abstained: 1
-        Did not vote: 3
-
+    0 votes | 0 % participation
+        Joe: 0
+        Sam: 0
+        Bob: 0
+        Jenny: 0
+        Anne: 0
+        Jim: 0
 ---------------------------------------------------------
 
