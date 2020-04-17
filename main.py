@@ -46,6 +46,8 @@ async def run(socket, path):
         logger.log("INFO", voter.name + " has verified their VOTER identity using access code \"" + voter.access_code + "\"")
         await socket.send("800|||" + voter.name)
         session.connected_voters.add(voter)
+        if voter not in session.attendance_list:
+            session.attendance_list.add(voter)
         voter.websocket = socket
         if session.cur_question == None:
             await socket.send("NEW|||NONE|||NONE")

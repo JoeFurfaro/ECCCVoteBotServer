@@ -27,6 +27,7 @@ class VotingSession():
         self.admins = admins
         self.connected_voters = set()
         self.connected_admins = set()
+        self.attendance_list = set()
         self.cur_question = None
 
     def vote_stats(self, question):
@@ -164,7 +165,13 @@ class VoteBotLogger():
             file.write("[#" + str(question.id) + "] " + question.text + "\n")
             for i,option in enumerate(question.options):
                 file.write("        " + option + ": " + str(stats[i]) + "\n")
-            file.write("---------------------------------------------------------\n\n")
+            file.write("        " + "Did not vote: " + str(stats[-3]) + "\n")
+            file.write("        " + "Total voters: " + str(stats[-2]) + "\n")
+            file.write("        " + "Participation : " + str(stats[-1]) + "%" + "\n")
+            file.write("---------------------------------------------------------\n")
+        file.write("\nAttendance List:\n\n")
+        for voter in session.attendance_list:
+            file.write("        " + voter.name + "\n")
         file.close()
 
     def log(self, type, message):
