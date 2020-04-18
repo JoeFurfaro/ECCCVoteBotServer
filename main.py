@@ -4,8 +4,11 @@ import asyncio
 import websockets
 from votebotlib import *
 import csv
+import ssl
+import pathlib
 
 import argparse
+import sys
 
 async def run(socket, path):
     global session, logger
@@ -231,12 +234,19 @@ parser = argparse.ArgumentParser()
 
 parser.add_argument("address")
 parser.add_argument("port", type=int)
+parser.add_argument("--ssl", nargs=2)
 
 args = parser.parse_args()
 
 try:
+    if(args.ssl != None):
+        ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
+        localhost_pem = pathlib.Path(args.ssl[0]).with_name(args.ssl[1])
+        ssl_context.load_cert_chain(args.ssl)
+        start_server = websockets.serve(run, args.address, args.port, ssl=ssl_context)
+    else:
+        start_server = websockets.serve(run, args.address, args.port)
     print("Starting ECCCVoteBotServer...")
-    start_server = websockets.serve(run, args.address, args.port)
     print("Running!")
 
     asyncio.get_event_loop().run_until_complete(start_server)
