@@ -1,0 +1,45 @@
+[18-04-2020 18:34:31] [INFO] Starting logger
+[18-04-2020 18:34:35] [INFO] Voter #0 has verified their VOTER identity using access code "g7b50b"
+[18-04-2020 18:34:43] [INFO] VOTER Voter #0 disconnected
+[18-04-2020 18:39:00] [WARNING] VOTER login failed using access code "e"
+[18-04-2020 18:39:00] [WARNING] VOTER login failed using access code "e"
+[18-04-2020 18:39:00] [WARNING] VOTER login failed using access code "e"
+[18-04-2020 18:39:00] [WARNING] VOTER login failed using access code "e"
+[18-04-2020 18:39:00] [WARNING] VOTER login failed using access code "e"
+[18-04-2020 18:39:25] [WARNING] VOTER login failed using access code "e"
+[18-04-2020 18:39:25] [WARNING] VOTER login failed using access code "e"
+[18-04-2020 18:39:25] [WARNING] VOTER login failed using access code "e"
+[18-04-2020 18:39:25] [WARNING] VOTER login failed using access code "e"
+[18-04-2020 18:39:25] [WARNING] VOTER login failed using access code "e"
+[18-04-2020 18:41:04] [INFO] Voter #0 has verified their VOTER identity using access code "g7b50b"
+[18-04-2020 18:41:04] [INFO] Voter #4 has verified their VOTER identity using access code "xhi2j6"
+[18-04-2020 18:41:04] [WARNING] VOTER duplicate login blocked using access code "xhi2j6"
+[18-04-2020 18:41:04] [WARNING] VOTER duplicate login blocked using access code "xhi2j6"
+[18-04-2020 18:41:04] [WARNING] VOTER duplicate login blocked using access code "xhi2j6"
+[18-04-2020 18:41:32] [INFO] VOTER Voter #4 disconnected
+[18-04-2020 18:41:32] [INFO] VOTER Voter #0 disconnected
+[18-04-2020 18:41:33] [INFO] Voter #0 has verified their VOTER identity using access code "g7b50b"
+[18-04-2020 18:41:33] [INFO] Voter #1 has verified their VOTER identity using access code "9o1sbi"
+[18-04-2020 18:41:33] [INFO] Voter #3 has verified their VOTER identity using access code "aqhi0k"
+[18-04-2020 18:41:33] [INFO] Voter #4 has verified their VOTER identity using access code "xhi2j6"
+[18-04-2020 18:41:33] [WARNING] VOTER duplicate login blocked using access code "xhi2j6"
+[18-04-2020 18:41:42] [INFO] VOTER Voter #4 disconnected
+[18-04-2020 18:41:42] [INFO] VOTER Voter #3 disconnected
+[18-04-2020 18:41:42] [INFO] VOTER Voter #1 disconnected
+[18-04-2020 18:41:42] [INFO] VOTER Voter #0 disconnected
+[18-04-2020 18:42:02] [INFO] Voter #0 has verified their VOTER identity using access code "g7b50b"
+[18-04-2020 18:42:02] [INFO] Voter #2 has verified their VOTER identity using access code "pmayu1"
+[18-04-2020 18:42:02] [INFO] Voter #1 has verified their VOTER identity using access code "9o1sbi"
+[18-04-2020 18:42:02] [INFO] Voter #4 has verified their VOTER identity using access code "xhi2j6"
+[18-04-2020 18:42:02] [INFO] Voter #3 has verified their VOTER identity using access code "aqhi0k"
+[18-04-2020 18:42:03] [INFO] VOTER Voter #4 disconnected
+[18-04-2020 18:42:03] [INFO] VOTER Voter #3 disconnected
+[18-04-2020 18:42:03] [INFO] VOTER Voter #1 disconnected
+[18-04-2020 18:42:03] [INFO] VOTER Voter #2 disconnected
+[18-04-2020 18:42:03] [INFO] VOTER Voter #0 disconnected
+[18-04-2020 18:42:11] [INFO] Voter #0 has verified their VOTER identity using access code "g7b50b"
+[18-04-2020 18:42:11] [INFO] Voter #2 has verified their VOTER identity using access code "pmayu1"
+[18-04-2020 18:42:11] [INFO] Voter #3 has verified their VOTER identity using access code "aqhi0k"
+[18-04-2020 18:42:11] [INFO] Voter #4 has verified their VOTER identity using access code "xhi2j6"
+[18-04-2020 18:42:11] [INFO] Voter #1 has verified their VOTER identity using access code "9o1sbi"
+[18-04-2020 18:42:18] [INFO] Closing logger

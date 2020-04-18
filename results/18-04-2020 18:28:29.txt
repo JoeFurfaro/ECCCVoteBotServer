@@ -1,0 +1,24 @@
+---------------------------------------------------------
+[#1] I drink tea at 3:00
+        True: 0
+        False: 0
+        Did not vote: 5
+        Total voters: 0
+        Participation : 0.0%
+---------------------------------------------------------
+[#2] Who would you like to vote for?
+        Ted: 0
+        Robert: 0
+        Cameron: 0
+        Did not vote: 5
+        Total voters: 0
+        Participation : 0.0%
+---------------------------------------------------------
+
+Attendance List:
+
+        Voter #1
+        Voter #2
+        Voter #3
+        Voter #0
+        Voter #4

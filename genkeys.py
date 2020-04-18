@@ -18,7 +18,7 @@ codes = [""]
 for voter in voters[1:]:
     rand_code = ""
     while rand_code in codes:
-        rand_code = id_generator(8)
+        rand_code = id_generator(6)
     codes.append(rand_code)
     out_file.write(voter[0] + "," + voter[1] + "," + voter[2] + "," + rand_code + "\n")
 

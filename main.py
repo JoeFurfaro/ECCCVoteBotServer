@@ -5,6 +5,8 @@ import websockets
 from votebotlib import *
 import csv
 
+import argparse
+
 async def run(socket, path):
     global session, logger
     login_type = None
@@ -225,9 +227,16 @@ for question in questions[1:]:
 
 session = VotingSession(admin_objs, voter_objs, question_objs)
 
+parser = argparse.ArgumentParser()
+
+parser.add_argument("address")
+parser.add_argument("port", type=int)
+
+args = parser.parse_args()
+
 try:
     print("Starting ECCCVoteBotServer...")
-    start_server = websockets.serve(run, "192.168.2.95", 8765)
+    start_server = websockets.serve(run, args.address, args.port)
     print("Running!")
 
     asyncio.get_event_loop().run_until_complete(start_server)
