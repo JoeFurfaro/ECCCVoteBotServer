@@ -242,7 +242,7 @@ try:
     if(args.ssl != None):
         ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
         localhost_pem = pathlib.Path(args.ssl[0]).with_name(args.ssl[1])
-        ssl_context.load_cert_chain(args.ssl)
+        ssl_context.load_cert_chain(localhost_pem)
         start_server = websockets.serve(run, args.address, args.port, ssl=ssl_context)
     else:
         start_server = websockets.serve(run, args.address, args.port)
