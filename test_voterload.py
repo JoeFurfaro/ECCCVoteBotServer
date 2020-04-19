@@ -4,18 +4,19 @@ import asyncio
 import csv
 import random
 import threading
+import pathlib
+import ssl
 
 parser = argparse.ArgumentParser()
 
 parser.add_argument("address")
 parser.add_argument("port", type=int)
-parser.add_argument("--ssl")
 
 args = parser.parse_args()
 
-ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
-localhost_pem = pathlib.Path(args.ssl)
-ssl_context.load_verify_locations(localhost_pem)
+ssl_context = ssl.create_default_context()
+ssl_context.check_hostname = False
+ssl_context.verify_mode = ssl.CERT_NONE
 
 voters = []
 with open("voter_data.csv") as csv_file:

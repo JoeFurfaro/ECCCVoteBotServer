@@ -1,0 +1,80 @@
+---------------------------------------------------------
+[#1] I drink tea at 3:00
+        True: 0
+        False: 0
+        Did not vote: 300
+        Total voters: 0
+        Participation : 0.0%
+---------------------------------------------------------
+[#2] Who would you like to vote for?
+        Ted: 0
+        Robert: 0
+        Cameron: 0
+        Did not vote: 300
+        Total voters: 0
+        Participation : 0.0%
+---------------------------------------------------------
+
+Attendance List:
+
+        Voter #30
+        Voter #31
+        Voter #32
+        Voter #33
+        Voter #34
+        Voter #35
+        Voter #36
+        Voter #0
+        Voter #37
+        Voter #1
+        Voter #38
+        Voter #2
+        Voter #39
+        Voter #3
+        Voter #40
+        Voter #4
+        Voter #41
+        Voter #5
+        Voter #42
+        Voter #6
+        Voter #43
+        Voter #7
+        Voter #44
+        Voter #8
+        Voter #45
+        Voter #9
+        Voter #46
+        Voter #10
+        Voter #47
+        Voter #11
+        Voter #48
+        Voter #12
+        Voter #49
+        Voter #13
+        Voter #50
+        Voter #14
+        Voter #51
+        Voter #15
+        Voter #52
+        Voter #16
+        Voter #53
+        Voter #17
+        Voter #54
+        Voter #18
+        Voter #55
+        Voter #19
+        Voter #56
+        Voter #20
+        Voter #57
+        Voter #21
+        Voter #58
+        Voter #22
+        Voter #59
+        Voter #23
+        Voter #60
+        Voter #24
+        Voter #25
+        Voter #26
+        Voter #27
+        Voter #28
+        Voter #29
