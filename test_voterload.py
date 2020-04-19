@@ -9,8 +9,13 @@ parser = argparse.ArgumentParser()
 
 parser.add_argument("address")
 parser.add_argument("port", type=int)
+parser.add_argument("--ssl")
 
 args = parser.parse_args()
+
+ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
+localhost_pem = pathlib.Path(args.ssl)
+ssl_context.load_verify_locations(localhost_pem)
 
 voters = []
 with open("voter_data.csv") as csv_file:
@@ -34,8 +39,9 @@ async def proc_msg(socket):
     await proc_msg(socket)
 
 async def bot_client(voter):
+    global ssl_context
     url = "wss://" + args.address + ":" + str(args.port)
-    async with websockets.connect(url) as socket:
+    async with websockets.connect(url, ssl=ssl_context) as socket:
         await socket.send("VOTER")
         await socket.send(voter[3])
 
