@@ -234,15 +234,16 @@ parser = argparse.ArgumentParser()
 
 parser.add_argument("address")
 parser.add_argument("port", type=int)
-parser.add_argument("--ssl")
+parser.add_argument("--ssl", nargs=2)
 
 args = parser.parse_args()
 
 try:
     if(args.ssl != None):
         ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
-        localhost_pem = pathlib.Path(args.ssl)
-        ssl_context.load_cert_chain(localhost_pem)
+        #localhost_pem = pathlib.Path(__file__).with_name(args.ssl)
+        localhost_pem = pathlib.Path(args.ssl[0])
+        ssl_context.load_cert_chain(localhost_pem, args.ssl[1])
         start_server = websockets.serve(run, args.address, args.port, ssl=ssl_context)
     else:
         start_server = websockets.serve(run, args.address, args.port)

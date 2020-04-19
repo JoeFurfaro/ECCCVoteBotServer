@@ -34,7 +34,7 @@ async def proc_msg(socket):
     await proc_msg(socket)
 
 async def bot_client(voter):
-    url = "ws://" + args.address + ":" + str(args.port)
+    url = "wss://" + args.address + ":" + str(args.port)
     async with websockets.connect(url) as socket:
         await socket.send("VOTER")
         await socket.send(voter[3])
