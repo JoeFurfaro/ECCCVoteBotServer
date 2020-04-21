@@ -9,12 +9,14 @@ import pathlib
 
 import argparse
 import sys
+import time
 
 async def run(socket, path):
     global session, logger
     login_type = None
     while login_type != "VOTER" and login_type != "ADMIN":
         try:
+            time.sleep(0.025)
             login_type = await socket.recv();
         except:
             pass
