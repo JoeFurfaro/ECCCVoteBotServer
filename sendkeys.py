@@ -3,7 +3,7 @@ import requests
 
 def send_key(api_key, email_address, name, key):
     return requests.post(
-        "https://api.mailgun.net/v3/reeve.tech/messages",
+        "https://api.mailgun.net/v3/mg.eccc.reeve.tech/messages",
         auth=("api", api_key),
         data={"from": "ECCC AGM Voting Services <votebot@reeve.tech>",
               "to": [name, email_address],
