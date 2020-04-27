@@ -1,5 +1,8 @@
 import csv
 import requests
+import logging
+
+logging.basicConfig(filename="mail.log", level=logging.INFO, format='%(asctime)s %(levelname)s: %(message)s')
 
 def send_key(api_key, email_address, name, key):
     return requests.post(
@@ -20,13 +23,19 @@ key_file = open("mailgun.key")
 mailgun_key = [x.strip() for x in key_file.readlines()][0]
 key_file.close()
 
-print(mailgun_key)
-
 voters = []
 with open("voter_data.csv") as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     for row in csv_reader:
         voters.append(row)
 
+print("Attempting to deliver mail...")
+logging.info("Starting mailing job...")
+
 for voter in voters:
-    print(send_key(mailgun_key, voter[2], voter[0] + " " + voter[1], voter[3]))
+    result = send_key(mailgun_key, voter[2], voter[0] + " " + voter[1], voter[3])
+    logging.info(voter[2] + ": " + str(result))
+
+logging.info("Job complete.")
+
+print("DONE! Check mail.log for status.")
