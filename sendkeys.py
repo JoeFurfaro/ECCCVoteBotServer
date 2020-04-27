@@ -7,7 +7,7 @@ def send_key(api_key, email_address, name, key):
         auth=("api", api_key),
         data={"from": "ECCC AGM Voting Services <votebot@reeve.tech>",
               "to": [name, email_address],
-              "subject": "Hello",
+              "subject": "Your ECCC Voting Session Invitation",
               "html": "<h1>Hello " + name + "!</h1>" +
               "<p>Your ECCC secret voter login access code is:</p>" +
               "<h2>" + key + "</h2>" +
