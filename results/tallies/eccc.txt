@@ -1,0 +1,14 @@
+[#1] On the motion to accept the Standing Rules as presented, I vote:
+        Yes: 1
+        No: 0
+        Did not vote: 0
+        Total voters: 1
+        Participation: 100.0%
+
+[#2] On the motion to accept the Consent Agenda as presented, I vote:
+        Yes: 0
+        No: 0
+        Did not vote: 1
+        Total voters: 0
+        Participation: 0.0%
+

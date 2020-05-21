@@ -15,11 +15,11 @@ out_file = open("voter_data.csv", "w")
 
 codes = [""]
 
-for voter in voters[1:]:
+for i,voter in enumerate(voters[1:]):
     rand_code = ""
     while rand_code in codes:
         rand_code = id_generator(6)
     codes.append(rand_code)
-    out_file.write(voter[0] + "," + voter[1] + "," + voter[2] + "," + rand_code + "\n")
+    out_file.write(voter[0] + "," + voter[1] + "," + voter[2] + "," + rand_code + "," + str(i) + "\n")
 
 out_file.close()

@@ -3,8 +3,8 @@ import asyncio
 import websockets
 
 class Voter():
-    def __init__(self, first_name, last_name, email, access_code):
-        self.id = id
+    def __init__(self, first_name, last_name, email, access_code, ID):
+        self.id = ID
         self.first_name = first_name
         self.last_name = last_name
         self.email = email
@@ -21,7 +21,8 @@ class Admin():
         self.websocket = None
 
 class VotingSession():
-    def __init__(self, admins, voters, questions):
+    def __init__(self, name, admins, voters, questions):
+        self.name = name
         self.questions = questions
         self.voters = voters
         self.admins = admins
@@ -29,6 +30,35 @@ class VotingSession():
         self.connected_admins = set()
         self.attendance_list = set()
         self.cur_question = None
+
+    def save(self):
+        attendance_file = open("results/attendance/" + self.name + ".txt", "w")
+        tallies_file = open("results/tallies/" + self.name + ".txt", "w")
+        votes_file = open("results/votes/" + self.name + ".txt", "w")
+
+        for voter in self.attendance_list:
+            attendance_file.write(voter.name + "\n")
+        
+        attendance_file.close()
+
+        for question in self.questions:
+            stats = self.vote_stats(question)
+            tallies_file.write("[#" + str(question.id) + "] " + question.text + "\n")
+            for i,option in enumerate(question.options):
+                tallies_file.write("        " + option + ": " + str(stats[i]) + "\n")
+            tallies_file.write("        " + "Did not vote: " + str(stats[-3]) + "\n")
+            tallies_file.write("        " + "Total voters: " + str(stats[-2]) + "\n")
+            tallies_file.write("        " + "Participation: " + str(stats[-1]) + "%" + "\n\n")
+        
+        tallies_file.close()
+
+        for question in self.questions:
+            votes_file.write(str(question.id) + "\n")
+            for vote in question.votes:
+                votes_file.write(str(vote.voter.id) + "," + vote.value + "\n")
+            votes_file.write("--\n")
+
+        votes_file.close()
 
     def vote_stats(self, question):
         did_not_vote = len(self.voters) - len(question.votes)

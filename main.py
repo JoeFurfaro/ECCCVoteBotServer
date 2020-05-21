@@ -168,6 +168,7 @@ async def run(socket, path):
                                 await session.send_to_admins("NEW|||" + str(question))
                                 await socket.send("802")
                                 logger.log("INFO", admin.name + " has changed the question ID to " + str(new_question_id))
+                                session.save()
                             except:
                                 await socket.send("702")
                         elif args[0] == "CLR":
@@ -175,6 +176,7 @@ async def run(socket, path):
                             session.clear_question()
                             await session.send_to_all("NEW|||NONE|||NONE")
                             await socket.send("803")
+                            session.save()
                             logger.log("INFO", admin.name + " has cleared the current question")
                         elif args[0] == "RESET":
                             question_id = int(args[1])
@@ -190,8 +192,8 @@ async def run(socket, path):
                                 await socket.send("704")
                         else:
                             await socket.send("703")
-        except Exception:
-            pass
+        except Exception as e:
+            print(e)
         finally:
             # Remove admin from connected list
             admin.websocket = None
@@ -218,19 +220,27 @@ with open("voter_data.csv") as csv_file:
 
 voter_objs = []
 for voter in voters:
-    voter_objs.append(Voter(voter[0], voter[1], voter[2], voter[3]))
+    voter_objs.append(Voter(voter[0], voter[1], voter[2], voter[3], int(voter[4])))
+
+session_name = input("Enter name of session to start: ")
 
 questions = []
-with open("questions.csv") as csv_file:
-    csv_reader = csv.reader(csv_file, delimiter=',')
-    for row in csv_reader:
-        questions.append(row)
+try:
+    with open("sessions/" + session_name + ".csv") as csv_file:
+        csv_reader = csv.reader(csv_file, delimiter=',')
+        for row in csv_reader:
+            questions.append(row)
+except Exception:
+    print("Could not find the specified session. Program will exit...")
+    sys.exit(0)
+
+print("Using session '" + session_name + "'")
 
 question_objs = []
 for question in questions[1:]:
     question_objs.append(Question(int(question[0]), question[1], question[2:]))
 
-session = VotingSession(admin_objs, voter_objs, question_objs)
+session = VotingSession(session_name, admin_objs, voter_objs, question_objs)
 
 parser = argparse.ArgumentParser()
 
@@ -255,5 +265,5 @@ try:
     asyncio.get_event_loop().run_until_complete(start_server)
     asyncio.get_event_loop().run_forever()
 except KeyboardInterrupt:
-    logger.save_results(session)
+    #0logger.save_results(session)
     logger.close()
