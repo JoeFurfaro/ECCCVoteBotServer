@@ -1,7 +1,0 @@
-[21-05-2020 16:04:37] [INFO] Starting logger
-[21-05-2020 16:04:54] [INFO] Joe Furfaro has verified their ADMIN identity using access code "password"
-[21-05-2020 16:05:13] [INFO] Joe Furfaro has verified their VOTER identity using access code "password"
-[21-05-2020 16:05:32] [INFO] Joe Furfaro has changed the question ID to 1
-[21-05-2020 16:05:35] [INFO] Joe Furfaro has voted "Yes"
-[21-05-2020 16:05:38] [INFO] Joe Furfaro has cleared the current question
-[21-05-2020 16:33:07] [INFO] Closing logger

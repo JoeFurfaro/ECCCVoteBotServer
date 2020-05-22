@@ -31,13 +31,44 @@ class VotingSession():
         self.attendance_list = set()
         self.cur_question = None
 
+    def load(self):
+        attendance_file = open("results/attendance/" + self.name + ".txt", "r")
+        votes_file = open("results/votes/" + self.name + ".txt", "r")
+
+        attendance_lines = [x.strip() for x in attendance_file.readlines()]
+        attendance_file.close()
+
+        for row in attendance_lines:
+            voter = self.get_voter_by_id(int(row))
+            if voter != None:
+                self.attendance_list.add(voter)
+
+        vote_lines = [x.strip() for x in votes_file.readlines()]
+        votes_file.close()
+
+        cur_q = None
+        data = []
+        for line in vote_lines:
+            if cur_q == None:
+                cur_q = self.get_question(int(line))
+            elif len(data) < 2:
+                data.append(line)
+            elif len(data) == 2:
+                voter = self.get_voter_by_id(int(data[0]))
+                cur_q.votes.append(Vote(voter, data[1]))
+                data = []
+
+            if line == "--":
+                cur_q = None
+                data = []
+
     def save(self):
         attendance_file = open("results/attendance/" + self.name + ".txt", "w")
         tallies_file = open("results/tallies/" + self.name + ".txt", "w")
         votes_file = open("results/votes/" + self.name + ".txt", "w")
 
         for voter in self.attendance_list:
-            attendance_file.write(voter.name + "\n")
+            attendance_file.write(str(voter.id))
         
         attendance_file.close()
 
@@ -45,17 +76,22 @@ class VotingSession():
             stats = self.vote_stats(question)
             tallies_file.write("[#" + str(question.id) + "] " + question.text + "\n")
             for i,option in enumerate(question.options):
-                tallies_file.write("        " + option + ": " + str(stats[i]) + "\n")
-            tallies_file.write("        " + "Did not vote: " + str(stats[-3]) + "\n")
-            tallies_file.write("        " + "Total voters: " + str(stats[-2]) + "\n")
-            tallies_file.write("        " + "Participation: " + str(stats[-1]) + "%" + "\n\n")
+                tallies_file.write("    " + option + ": " + str(stats[i]) + "\n")
+            tallies_file.write("    " + "Did not vote: " + str(stats[-3]) + "\n")
+            tallies_file.write("    " + "Total voters: " + str(stats[-2]) + "\n")
+            tallies_file.write("    " + "Participation: " + str(stats[-1]) + "%" + "\n\n")
         
+        tallies_file.write("Attendance list:\n")
+        for voter in self.attendance_list:
+            tallies_file.write("    " + voter.name)
+
         tallies_file.close()
 
         for question in self.questions:
             votes_file.write(str(question.id) + "\n")
             for vote in question.votes:
-                votes_file.write(str(vote.voter.id) + "," + vote.value + "\n")
+                votes_file.write(str(vote.voter.id) + "\n")
+                votes_file.write(vote.value + "\n")
             votes_file.write("--\n")
 
         votes_file.close()
@@ -87,6 +123,12 @@ class VotingSession():
     async def send_to_all(self, data):
         await self.send_to_voters(data)
         await self.send_to_admins(data)
+
+    def get_voter_by_id(self, id):
+        for voter in self.voters:
+            if voter.id == id:
+                return voter
+        return None
 
     def clear_question(self):
         self.cur_question = None

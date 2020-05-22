@@ -187,13 +187,14 @@ async def run(socket, path):
                                 stats = session.vote_stats(question)
                                 stats_str = session.vote_stats_str(question)
                                 await session.send_to_admins("STATS|||" + str(question) + "|||" + stats_str)
+                                session.save()
                                 logger.log("INFO", admin.name + " has reset the votes on question " + str(question_id))
                             else:
                                 await socket.send("704")
                         else:
                             await socket.send("703")
         except Exception as e:
-            print(e)
+            pass
         finally:
             # Remove admin from connected list
             admin.websocket = None
@@ -222,7 +223,16 @@ voter_objs = []
 for voter in voters:
     voter_objs.append(Voter(voter[0], voter[1], voter[2], voter[3], int(voter[4])))
 
-session_name = input("Enter name of session to start: ")
+parser = argparse.ArgumentParser()
+
+parser.add_argument("address")
+parser.add_argument("port", type=int)
+parser.add_argument("session")
+parser.add_argument("--ssl", nargs=2)
+
+args = parser.parse_args()
+
+session_name = args.session
 
 questions = []
 try:
@@ -231,24 +241,23 @@ try:
         for row in csv_reader:
             questions.append(row)
 except Exception:
-    print("Could not find the specified session. Program will exit...")
+    print("Could not find the specified session")
     sys.exit(0)
 
-print("Using session '" + session_name + "'")
+logger.log("INFO", "Using session '" + session_name + "'")
 
 question_objs = []
 for question in questions[1:]:
     question_objs.append(Question(int(question[0]), question[1], question[2:]))
 
 session = VotingSession(session_name, admin_objs, voter_objs, question_objs)
+session.load()
 
-parser = argparse.ArgumentParser()
-
-parser.add_argument("address")
-parser.add_argument("port", type=int)
-parser.add_argument("--ssl", nargs=2)
-
-args = parser.parse_args()
+async def autosave_session(logger, session):
+    while True:
+        await asyncio.sleep(60 * 5)
+        session.save()
+        logger.log("INFO", "Automatically saving all voting session data")
 
 try:
     if(args.ssl != None):
@@ -259,11 +268,15 @@ try:
         start_server = websockets.serve(run, args.address, args.port, ssl=ssl_context)
     else:
         start_server = websockets.serve(run, args.address, args.port)
-    print("Starting ECCCVoteBotServer...")
-    print("Running!")
+
+    logger.log("INFO", "Server started successfully")
+
+    loop = asyncio.get_event_loop()
+    task = loop.create_task(autosave_session(logger, session))
 
     asyncio.get_event_loop().run_until_complete(start_server)
     asyncio.get_event_loop().run_forever()
 except KeyboardInterrupt:
     #0logger.save_results(session)
+    session.save()
     logger.close()

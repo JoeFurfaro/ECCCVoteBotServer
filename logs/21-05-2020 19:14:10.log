@@ -1,0 +1,15 @@
+[21-05-2020 19:14:10] [INFO] Starting logger
+[21-05-2020 19:14:11] [INFO] Server started successfully
+[21-05-2020 19:14:22] [INFO] Joe Furfaro has verified their ADMIN identity using access code "password"
+[21-05-2020 19:14:26] [INFO] Joe Furfaro has verified their VOTER identity using access code "password"
+[21-05-2020 19:14:31] [INFO] Joe Furfaro has changed the question ID to 1
+[21-05-2020 19:14:35] [INFO] Joe Furfaro has changed the question ID to 2
+[21-05-2020 19:14:52] [INFO] Joe Furfaro has reset the votes on question 1
+[21-05-2020 19:14:58] [INFO] Joe Furfaro has cleared the current question
+[21-05-2020 19:15:11] [INFO] Joe Furfaro has reset the votes on question 2
+[21-05-2020 19:15:12] [INFO] Joe Furfaro has changed the question ID to 2
+[21-05-2020 19:15:20] [INFO] Joe Furfaro has changed the question ID to 1
+[21-05-2020 19:15:23] [INFO] Joe Furfaro has voted "Yes"
+[21-05-2020 19:19:11] [INFO] Automatically saving all voting session data...
+[21-05-2020 19:24:11] [INFO] Automatically saving all voting session data...
+[21-05-2020 19:27:47] [INFO] Closing logger

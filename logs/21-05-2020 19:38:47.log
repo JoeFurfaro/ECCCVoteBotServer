@@ -1,0 +1,29 @@
+[21-05-2020 19:38:47] [INFO] Starting logger
+[21-05-2020 19:38:47] [INFO] Using session 'eccc'
+[21-05-2020 19:38:47] [INFO] Server started successfully
+[21-05-2020 19:38:53] [INFO] Joe Furfaro has verified their VOTER identity using access code "password"
+[21-05-2020 19:38:58] [INFO] Joe Furfaro has verified their ADMIN identity using access code "password"
+[21-05-2020 19:39:03] [INFO] Joe Furfaro has changed the question ID to 1
+[21-05-2020 19:39:10] [INFO] Joe Furfaro has cleared the current question
+[21-05-2020 19:39:12] [INFO] Joe Furfaro has reset the votes on question 1
+[21-05-2020 19:39:17] [INFO] VOTER Joe Furfaro disconnected
+[21-05-2020 19:39:26] [INFO] Joe Furfaro has verified their VOTER identity using access code "password"
+[21-05-2020 19:40:17] [INFO] Joe Furfaro has changed the question ID to 1
+[21-05-2020 19:40:50] [INFO] VOTER Joe Furfaro disconnected
+[21-05-2020 19:40:55] [INFO] Joe Furfaro has verified their VOTER identity using access code "password"
+[21-05-2020 19:41:26] [INFO] VOTER Joe Furfaro disconnected
+[21-05-2020 19:41:32] [INFO] Joe Furfaro has verified their VOTER identity using access code "password"
+[21-05-2020 19:43:47] [INFO] Automatically saving all voting session data
+[21-05-2020 19:45:50] [INFO] VOTER Joe Furfaro disconnected
+[21-05-2020 19:47:32] [INFO] Joe Furfaro has verified their VOTER identity using access code "password"
+[21-05-2020 19:47:38] [INFO] Joe Furfaro has voted "Yes"
+[21-05-2020 19:48:05] [INFO] VOTER Joe Furfaro disconnected
+[21-05-2020 19:48:09] [INFO] Joe Furfaro has verified their VOTER identity using access code "password"
+[21-05-2020 19:48:17] [INFO] VOTER Joe Furfaro disconnected
+[21-05-2020 19:48:21] [INFO] Joe Furfaro has verified their VOTER identity using access code "password"
+[21-05-2020 19:48:26] [INFO] VOTER Joe Furfaro disconnected
+[21-05-2020 19:48:29] [INFO] Joe Furfaro has verified their VOTER identity using access code "password"
+[21-05-2020 19:48:47] [INFO] Automatically saving all voting session data
+[21-05-2020 19:49:14] [INFO] VOTER Joe Furfaro disconnected
+[21-05-2020 19:49:17] [INFO] Joe Furfaro has verified their VOTER identity using access code "password"
+[21-05-2020 19:49:30] [INFO] Closing logger
